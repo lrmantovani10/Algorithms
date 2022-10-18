@@ -1,0 +1,9 @@
+def height(root):
+    def move(tree,height):
+        if tree != None:
+            height += 1
+            return max(move(tree.left, height), move(tree.right, height))
+        else:
+            return height
+    return max(move(root.left,0), move(root.right, 0))
+    
